@@ -1,45 +1,36 @@
 <template>
-  <div @click="clickHandle">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />
-
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" :value="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
-
-    <div class="all">
-        <div class="left">
-        </div>
-        <div class="right">
-        </div>
-    </div>
+<div class="page page-color" >
+  <div >
+    <mpSearchBar></mpSearchBar>
   </div>
+   <!-- 商品分类 -->
+            <div class="tabs">
+                <div class="tab" @click="getList()">
+                    <img src="../../../static/images/index/tab_1.png" alt="icon">
+                    <p>热卖商品</p>
+                </div>
+                <div class="tab" @click="getList()">
+                    <img src="../../../static/images/index/tab_2.png" alt="icon">
+                    <p>小米闪购</p>
+                </div>
+                <div class="tab" @click="getList()">
+                    <img src="../../../static/images/index/tab_3.png" alt="icon">
+                    <p>以旧换新</p>
+                </div>
+                <div class="tab" @click="getList()">
+                    <img src="../../../static/images/index/tab_4.png" alt="icon">
+                    <p>1分拼团</p>
+                </div>
+            </div>
+</div>
 </template>
 
 <script>
-import card from '@/components/card'
+import mpSearchBar from '../../components/searchbar';
 
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
       userInfo: {
         nickName: 'mpvue',
         avatarUrl: 'http://mpvue.com/assets/logo.png'
@@ -48,21 +39,12 @@ export default {
   },
 
   components: {
-    card
+    mpSearchBar,
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
+    getList(){
+
     }
   },
 
@@ -72,55 +54,36 @@ export default {
 }
 </script>
 
-<style scoped>
-.userinfo {
+<style scoped lang='less'>
+.page-color {
+  background-color: #f0f0f0;
+}
+.tabs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0 0.1rem;
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all{
-  width:7.5rem;
-  height:1rem;
-  background-color:blue;
-}
-.all:after{
-  display:block;
-  content:'';
-  clear:both;
-}
-.left{
-  float:left;
-  width:3rem;
-  height:1rem;
-  background-color:red;
-}
-
-.right{
-  float:left;
-  width:4.5rem;
-  height:1rem;
-  background-color:green;
+    width: 20%;
+    &:nth-child(n + 6) {
+      margin-top: 0.2rem;
+    }
+    img {
+      width: 0.4rem;
+    }
+    p {
+      color: #999;
+      font-size: 0.12rem;
+      margin-top: 0.05rem;
+    }
+  }
 }
 </style>
