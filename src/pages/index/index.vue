@@ -4,22 +4,22 @@
     <mpSearchBar></mpSearchBar>
   </div>
    <!-- 商品分类 -->
-            <div class="tabs">
+            <div class="tabs tabs-height">
                 <div class="tab" @click="getList()">
                     <img src="../../../static/images/index/tab_1.png" alt="icon">
-                    <p>热卖商品</p>
+                    <p>找工作</p>
                 </div>
                 <div class="tab" @click="getList()">
                     <img src="../../../static/images/index/tab_2.png" alt="icon">
-                    <p>小米闪购</p>
+                    <p>找工人</p>
                 </div>
                 <div class="tab" @click="getList()">
                     <img src="../../../static/images/index/tab_3.png" alt="icon">
-                    <p>以旧换新</p>
+                    <p>找项目</p>
                 </div>
                 <div class="tab" @click="getList()">
                     <img src="../../../static/images/index/tab_4.png" alt="icon">
-                    <p>1分拼团</p>
+                    <p>工人/或班组</p>
                 </div>
             </div>
 </div>
@@ -64,24 +64,27 @@ export default {
   justify-content: space-between;
 
   width: 100%;
+  box-sizing: border-box;
   margin-top: 0.3rem;
-  padding: 0 0.1rem;
+  padding: 0 0.4rem;
   .tab {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
-    width: 20%;
+    width: 25%;
     &:nth-child(n + 6) {
       margin-top: 0.2rem;
     }
     img {
-      width: 0.4rem;
+      width: 1rem;
+      height: 0.9rem;
     }
     p {
-      color: #999;
-      font-size: 0.12rem;
+      color: #333333;
+      font-size: 0.2rem;
+      font-weight: bold;
       margin-top: 0.05rem;
     }
   }
