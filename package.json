@@ -26,6 +26,8 @@
     "less": "^4.1.1",
     "less-loader": "^5.0.0",
     "mpvue": "^2.0.0",
+    "mpvue-citypicker": "^1.0.6",
+    "mpvue-picker": "^2.1.6",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

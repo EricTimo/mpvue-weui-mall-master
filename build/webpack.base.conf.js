@@ -24,8 +24,10 @@ function getEntry (rootSrc) {
    return map;
 }
 
-const appEntry = { app: resolve('./src/main.js') }
-const pagesEntry = getEntry(resolve('./src'), 'pages/**/main.js')
+const appEntry = {
+  app: resolve('./product/main.js')
+}
+const pagesEntry = getEntry(resolve('./product'), 'pages/**/main.js')
 const entry = Object.assign({}, appEntry, pagesEntry)
 
 let baseWebpackConfig = {
@@ -46,7 +48,7 @@ let baseWebpackConfig = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue': 'mpvue',
-      '@': resolve('src')
+      '@': resolve('product')
     },
     symlinks: false,
     aliasFields: ['mpvue', 'weapp', 'browser'],
@@ -62,7 +64,7 @@ let baseWebpackConfig = {
       { test: /.less$/, loader: "style-loader!css-loader!less-loader" },
       {
         test: /\.js$/,
-        include: [resolve('src'), resolve('test')],
+        include: [resolve('src'), resolve('test'), resolve('product')],
         use: [
           'babel-loader',
           {
@@ -108,12 +110,12 @@ let baseWebpackConfig = {
       from: '**/*.json',
       to: ''
     }], {
-      context: 'src/'
+      context: 'product/'
     }),
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),
-        to: path.resolve(config.build.assetsRoot, './static'),
+      to: path.resolve(__dirname, '../dist/static'),
         ignore: ['.*']
       }
     ])

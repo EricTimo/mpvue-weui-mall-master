@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/main",
     "pages/release/main",
-    "pages/user/main"
+    "pages/user/main",
+    "pages/rate/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,9 +34,14 @@
         "pagePath": "pages/user/main",
         "iconPath": "static/images/index/user.png",
         "selectedIconPath": "static/images/index/user-active.png"
+      },
+      {
+        "text": "test",
+        "pagePath": "pages/rate/main",
+        "iconPath": "static/images/index/user.png",
+        "selectedIconPath": "static/images/index/user-active.png"
       }
     ],
-    
     "position": "bottom"
   }
 }
