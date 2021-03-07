@@ -31,6 +31,7 @@ export default {
   },
   computed: {
     itemClasses() {
+      console.log("rateClass:" +this.rateClass);
       const CLS_ON = 'weui-rate-item-on ' + this.rateClass;
       const CLS_HALF = 'weui-rate-item-half ' + this.rateClass;
       const CLS_OFF = 'weui-rate-item-off ' + this.rateClass;
@@ -65,8 +66,8 @@ export default {
 <style scoped>
 .weui-rate-item {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 30rpx;
+  height: 30rpx;
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }

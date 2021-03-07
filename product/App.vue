@@ -30,7 +30,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang='less'>
+@px2rem:75rem;
 .container {
   height: 100%;
   display: flex;
