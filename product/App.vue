@@ -43,42 +43,42 @@ export default {
 }
 /* common-style */
 .mt15 {
-  margin-top: 15px;
+  margin-top: 15rpx;
 }
 .mb15 {
-  margin-bottom: 15px;
+  margin-bottom: 15rpx;
 }
 .ml15 {
-  margin-left: 15px;
+  margin-left: 15rpx;
 }
 .mr15 {
-  margin-right: 15px;
+  margin-right: 15rpx;
 }
 .padding15 {
-  padding: 15px;
+  padding: 15rpx;
 }
 .page-info {
-  padding: 15px;
+  padding: 15rpx;
 }
 .flex-center {
   display: flex;
   align-content: center;
 }
 .page__hd {
-  padding: 40px;
+  padding: 40rpx;
 }
 .page__title {
   text-align: left;
-  font-size: 20px;
+  font-size: 20rpx;
   font-weight: 400;
 }
 .page__desc {
-  margin-top: 5px;
+  margin-top: 5rpx;
   color: #888888;
   text-align: left;
-  font-size: 14px;
+  font-size: 14rpx;
 }
 .page__bd_spacing {
-  padding: 0 15px;
+  padding: 0 15rpx;
 }
 </style>

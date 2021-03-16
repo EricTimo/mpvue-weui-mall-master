@@ -1,6 +1,6 @@
-<!-- 找活 招工 项目转单 -->
+<!--  -->
 <template>
-<div></div>
+<div>项目转单</div>
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
     }
 }
 </script>
-<style scoped lang='less'>
+<style scoped>
 /* @import url(); 引入css类 */
 
 </style>
