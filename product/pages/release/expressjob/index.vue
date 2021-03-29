@@ -25,13 +25,17 @@
             </textarea>
             </div>
         </div>
-        <mp-button class="submit">确认发布</mp-button>
+        <mp-button @click='submitInfo' type="primary" size="large" btnClass="ml15 mr15" >确认发布</mp-button>
     </div>
 </div>
 </template>
 
 <script>
+import mpButton from '../../../../src/button';
 export default {
+    components:{
+        mpButton
+    },
     name: "",
     data() {
         return {
